@@ -1,0 +1,456 @@
+1001st Air Base Wing 1001st Composite Wing
+Medical Services Wing, Provisional, 1010th
+1020th USAF Special Activities Wing
+1050th Air Base Wing
+1090th USAF Special Reporting Wing
+1100th Air Base Wing
+1100th Air Base Wing
+1140th USAF Special Reporting Wing
+1254th Air Transport Wing
+1300th Air Base Wing
+1370th Photographic Mapping Wing
+1400th Air Base Wing
+1401st Air Base Wing
+1405th Air Base Wing
+1500th Air Base Wing
+1500th Air Transport Wing 1500th Air Base Wing
+Strategic Wing, Provisional, 1500th
+1501st Air Transport Wing
+1502d Air Transport Wing
+1503d Air Transport Wing
+1506th Air Base Wing
+1550th Aircrew Training and Test Wing 1550th Combat Crew Training Wing
+1600th Air Transport Wing 1600th Air Base Wing
+1602d Air Transport Wing
+1603d Air Transport Wing
+1604th Air Base Wing
+1605th Air Base Wing
+1605th Military Airlift Support Wing
+1606th Air Base Wing
+1607th Air Transport Wing
+1608th Air Transport Wing
+1611th Air Transport Wing
+Tactical Airlift Wing, Provisional, 1620th
+Tactical Airlift Wing, Provisional, 1630th
+1640th Air Base Wing
+Tactical Airlift Wing, Provisional, 1640th
+Tactical Airlift Wing, Provisional, 1650th
+Tactical Airlift Wing, Provisional, 1660th
+Air Refueling Wing, Provisional, 1700th
+1700th Air Transport Wing
+1701st Air Transport Wing
+Air Refueling Wing, Provisional, 1702d
+Air Refueling Wing, Provisional, 1703d
+1704th Air Transport Wing
+1705th Air Transport Wing
+Air Refueling Wing, Provisional, 1706th
+1707 Air Base Wing 1707th Air Transport Wing (Training)
+Air Refueling Wing, Provisional, 1707th
+1708th Ferrying Wing
+Air Refueling Wing, Provisional, 1709th
+Air Refueling Wing, Provisional, 1711th
+Air Refueling Wing, Provisional, 1712th
+Air Refueling Wing, Provisional, 1713th
+1776th Air Base Wing
+1800th AACS Wing
+1800th Information Systems Wing 1800th Communications Wing
+1804th AACS Wing
+1805th AACS Wing
+1807th AACS Wing
+1808th AACS Wing
+1840th Air Base Wing
+1931st Information Systems Wing 1931st Communications Wing
+1989th Information Systems Wing 1989th Communications Wing
+2005th Information Systems Wing 2005th Communications Wing
+2043d Air Weather Wing
+2058th Air Weather Wing
+2059th Air Weather Wing
+2143d Air Weather Wing
+2147th Information Systems Wing 2147th Communications Wing
+2349th Air Base Wing
+2477th Air Reserve Training Wing
+2478th Air Reserve Training Wing
+2479th Air Reserve Training Wing
+2480th Air Reserve Training Wing
+2481st Air Reserve Training Wing
+Air Reserve Training Wing, Provisional, 2482d
+2482d Air Reserve Training Wing
+Air Reserve Training Wing, Provisional, 2483d
+2483d Air Reserve Training Wing
+Air Reserve Training Wing, Provisional, 2484th
+2484th Air Reserve Training Wing
+Air Reserve Training Wing, Provisional, 2485th
+2485th Air Reserve Training Wing
+Air Reserve Training Wing, Provisional, 2490th
+2490th Air Reserve Training Wing
+2491st Air Reserve Training Wing
+2492d Air Reserve Training Wing
+2493d Air Reserve Training Wing
+2494th Air Reserve Training Wing
+2495th Air Reserve Training Wing
+2496th Air Reserve Training Wing
+2500th Air Base Wing
+2705 Air Munitions Wing
+2710th Air Base Wing
+2750th Air Base Wing
+2751st Experimental Wing
+2754th Experimental Wing
+2758th Experimental Wing
+2759th Experimental Wing
+2842d Transportation Control Wing
+2845th Air Depot Wing
+2848th Air Base Wing
+2849th Air Base Wing
+2850th Air Base Wing
+2851st Air Base Wing
+2852d Air Base Wing
+2853d Air Base Wing
+2854th Air Base Wing
+2855th Air Base Wing
+2856th Air Base Wing
+2899th Depot Training Wing
+2900th Air Depot Wing (Mobile)
+2940th Depot Training Wing
+2941st Depot Training Wing
+2942d Depot Training Wing
+2943d Depot Training Wing
+2944th Depot Training Wing
+2949th Depot Training Wing
+2950th Depot Training Wing
+3079th Aviation Depot Wing
+3090th Air Depot Wing
+3090th Support Wing
+3130th Air Base Wing
+3153d Air Base Wing
+3200th Maintenance Wing 3200th Test Wing (Maintenance)
+3200th Proof Test Wing
+3200th Support Wing
+3201st Air Base Wing
+3202d Installations Wing
+3206th Support Wing 3206th Test Wing
+3245th Air Base Wing
+3246th Test Wing
+3250th Technical Training Wing
+3250th Technical Training Wing
+3275th AF Indoctrination Wing 3275th Basic Military Training Wing
+3300th Technical Training Wing
+3300th Technical Training Wing
+3310th Technical Training Wing
+3320th Technical Training Wing
+3330th Technical Training Wing
+3345th Technical Training Wing
+3350th Technical Training Wing
+3380th Technical Training Wing
+3400th Technical Training Wing
+3415th Technical Training Wing
+3450th Technical Training Wing
+3480th Technical Training Wing
+3499th Training Aids Wing
+3499th Mobile Training Wing 3499th Field Training Wing
+3500th Pilot Training Wing
+3500th Recruiting Wing
+3505th Pilot Training Wing
+3510th Flying Training Wing
+3520th Combat Crew Training Wing 3520th Flying Training Wing 3520th Combat Crew Training Wing
+3525th Pilot Training Wing 3525th Combat Crew Training Wing
+3525th Pilot Training Wing
+3530th Pilot Training Wing
+3535th Navigator Training Wing
+3540th Combat Crew Training Wing 3540th Flying Training Wing
+3545th Basic Pilot Training Wing 3545th Pilot Training Wing
+3550th Pilot Training Wing
+3555th Pilot Training Wing
+3560th Pilot Training Wing
+3565th Navigator Training Wing
+3575th Pilot Training Wing
+3580th Pilot Training Wing
+3585th Pilot Training Wing 3585th Flying Training Wing
+3595th Combat Crew Training Wing
+3600th Flying Training Wing 3600th Combat Crew Training Wing
+3605th Navigator Training Wing 3605th Observer Training Wing 3605th Navigator Training Wing
+3610th Observer Training Wing 3610th Navigator Training Wing
+3615th Pilot Training Wing
+3625th Training Wing 3625th Flying Training Wing (Interceptor) 3625th Combat Crew Training Wing
+3630 Flying Training Wing
+3635th Combat Crew Training Wing (Survival) 3635th Flying Training Wing (Advanced)
+3636th Combat Crew Training Wing
+3640th Pilot Training Wing
+3645th Pilot Training Wing
+3646th Pilot Training Wing
+3650th AF Indoctrination Wing 3650th Military Training Wing
+3650th Pilot Training Wing
+3700th AF Indoctrination Wing 3700th Military Training Wing
+3700th Basic Training Wing
+3700th Technical Training Wing
+3700th Technical Training Wing
+3750th Basic Training Wing 3750th Technical Training Wing
+3785th Field Training Wing
+3790th Medical Service Training Wing
+3800th Air University Wing 3800th Air Base Wing
+3820th Air University Wing
+3840th Air University Wing
+3902d Air Base Wing
+3904th Composite Wing
+3918th Strategic Wing
+3920th Strategic Wing
+3960th Air Base Wing 3960th Strategic Wing
+3970th Strategic Wing
+3973d Strategic Wing
+3977th Support Wing
+4008th Consolidated Aircraft Maintenance Wing
+4026th Strategic Wing
+4038th Strategic Wing
+4039th Strategic Wing
+4042d Strategic Wing
+4043d Strategic Wing
+4045th Air Refueling Wing
+4047th Strategic Wing
+4050th Air Refueling Wing
+4060th Air Refueling Wing
+4061st Air Refueling Wing
+4062d Strategic Missile Wing (Minuteman)
+4070th Support Wing
+4080th Strategic Reconnaissance Wing, Light 4080th Strategic Wing
+4081st Strategic Wing
+4082d Strategic Wing
+4083d Air Base Wing
+4083d Strategic Wing
+4090th Air Refueling Wing
+4108th Air Refueling Wing
+4123d Strategic Wing
+4126th Strategic Wing
+4128th Strategic Wing
+4130th Strategic Wing
+4133d Strategic Wing
+Bombardment Wing, Provisional, 4133d
+4134th Strategic Wing
+4135th Strategic Wing
+4136th Strategic Wing
+4137th Strategic Wing
+4138th Strategic Wing
+4141st Strategic Wing
+4157th Strategic Wing
+4158th Strategic Wing
+4170th Strategic Wing
+4190th Wing (Provisional)
+4200th Strategic Reconnaissance Wing
+4228th Strategic Wing
+4238th Strategic Wing
+4239th Strategic Wing
+4240d Flying Training Wing
+4241st Strategic Wing
+4245th Strategic Wing
+4252d Strategic Wing
+4258th Strategic Wing
+Bombardment Wing, Provisional, 4300th
+4320th Strategic Wing (Missile)
+4321st Strategic Wing
+4347th Combat Crew Training Wing
+4392d Aerospace Support Wing
+4397th Air Refueling Wing (Training)
+4403rd Tactical Fighter Wing
+4404th Tactical Fighter Wing, Provisional 4404th Composite Wing, Provisional
+4404th Wing, Provisional
+Operations Support Wing, Provisional 4409th
+4410th Combat Crew Training Wing
+Operations Support Wing, Provisional, 4410th
+Troop Carrier Wing, Provisional 4413th
+4430th Air Base Wing
+4453rd Combat Crew Training Wing
+Tactical Fighter Wing, Provisional, 4474th
+Tactical Training Wing, Provisional, 4479th
+4480th Tactical Fighter Wing
+Composite Test Wing, Provisional, 4485th
+4485th Test Wing
+4500th Air Base Wing
+4504th Missile Training Wing (Tactical) 4504th Tactical Missile Wing (Training)
+4505th Air Refueling Wing
+4510th Combat Crew Training Wing
+4520th Combat Crew Training Wing
+4525th Fighter Weapons Wing
+4530th Combat Crew Training Wing
+4531st Tactical Fighter Wing
+4554th Combat Crew Training Wing 4454th Tactical Fighter Wing
+4600th Air Base Wing
+4601st Support Wing
+4602d Support Wing
+4620th Air Defense Wing, SAGE Experimental
+4621st Air Defense Wing, SAGE
+4622d Air Defense Wing, SAGE
+4624th Air Defense Wing, SAGE
+4625th Air Defense Wing, SAGE
+4627th Air Defense Wing, SAGE
+4628th Air Defense Wing, SAGE
+4683d Air Defense Wing
+4700th Air Defense Wing
+4702d Defense Wing
+4703d Defense Wing
+4704th Air Defense Wing
+4705th Defense Wing
+4706th Defense Wing 4706th Air Defense Wing
+4707th Defense Wing 4707th Air Defense Wing
+4708th Defense Wing 4708th Air Defense Wing
+4709th Defense Wing 4709th Air Defense Wing
+4710th Defense Wing 4710th Air Defense Wing
+4711th Defense Wing 4711th Air Defense Wing
+4737th Air Base Wing
+4750th Training Wing (Air Defense) 4750th Air Defense Wing
+4751st Air Defense Missile Wing 4751st Air Defense Wing (Missile)
+4752d Air Defense Wing
+4756th Air Defense Wing (Weapons)
+4756th Air Defense Wing (Training)
+4780th Air Defense Wing (Training)
+4800th Guided Missiles Wing
+4900th Air Base Wing
+4901st Special Weapons Wing
+4901st Support Wing (Atomic) Air Base Wing
+4950th Test Wing
+5001st Air Base Wing
+5001st Composite Wing
+5010th Wing 5010th Composite Wing 5010th Air Base Wing
+5020th Wing
+5039th Air Depot Wing
+5039th Air Base Wing
+5040th Air Base Wing
+5060th Air Base Wing
+5070th Air Defense Wing
+5600th Wing 5600th Composite Wing
+5620th Composite Wing
+5700th Composite Wing 5700th Air Base Wing
+5900th Wing 5900th Composite Wing
+6000th Support Wing
+6002d Tactical Support Wing
+6013th Operations Wing (Northern Area)
+6014th Operations Wing (Central Area)
+6015th Operations Wing (Southern Area)
+6016th Air Base Wing
+6048th Air Base Wing
+6100th Air Base Wing 6100th Support Wing
+6100th Air Base Wing
+6101st Air Base Wing
+6102d Air Base Wing
+6112th Air Base Wing
+6122d Air Base Wing
+6131st Tactical Support Wing
+6133d Tactical Support Wing
+6149th Tactical Support Wing
+6150th Tactical Support Wing
+6160th Air Base Wing
+6161st Air Base Wing
+6162d Air Base Wing
+6163d Air Base Wing
+6171st Air Base Wing
+6200th Air Base Wing
+6200th Air Base Wing
+6200th Materiel Wing 6200th Air Base Wing
+6208th Air Depot Wing
+Tactical Fighter Wing, Provisional, 6234th
+6234th Tactical Fighter Wing
+6235th Tactical Fighter Wing
+6251st Combat Support Wing 6251st Tactical Fighter Wing
+6252d Tactical Fighter Wing
+6313d Air Base Wing
+6314th Air Base Wing 6314th Support Wing
+6319th Air Base Wing
+6332d Station Wing 6332d Air Base Wing
+6351st Air Base Wing
+6400th Air Depot Wing
+6405th Air Support Wing (Materiel)
+6418th Air Depot Wing
+6424th Air Depot Wing
+6441st Tactical Fighter Wing
+6486th Air Base Wing
+6498th Air Base Wing
+6500th Air Base Wing 6500th Support Wing
+6502d Composite Wing
+6510th Air Base Wing
+6510th Test Wing
+6512th Test Wing
+6520th Test Support Wing 6520th Support Wing
+6530th Air Base Wing
+6540th Missile Test Wing
+6541st Missile Test Wing
+6550th Air Base Wing
+6550th Air Base Wing
+6550th Support Wing (Range)
+6555th Guided Missile Wing
+6555th Test Wing (Development) 6555th Aerospace Test Wing
+6565th Test Wing (Development) 6565th Aerospace Test Wing
+6580th Missile Test Wing
+6580th Test Support Wing 6580th Air Base Wing
+6592d Support Wing
+6594th Test Wing (Satellite) 6594th Aerospace Test Wing
+6595th Aerospace Test Wing
+6600th Air Depot Wing
+6602d Air Base Wing
+6603d Air Base Wing
+6604th Air Base Wing
+6605th Air Base Wing
+6606th Air Base Wing
+6607th Air Base Wing
+6900th Security Wing
+6910th Electronic Security Wing
+6910th Security Wing
+6920th Security Wing
+6920th Security Wing
+6921st Security Wing
+6922d Security Wing
+6933d Security Wing
+6940th Air Base Wing 6940th Technical Training Wing 6940th Security Wing
+6940th Electronic Security Wing
+6944th Security Wing
+6950th Security Wing
+6960th Electronic Security Wing
+7000th Support Wing
+7020th Air Base Wing
+7030th Air Base Wing 7030th Combat Support Wing
+7050th Air Intelligence Service Wing
+7100th Air Base Wing
+7100th Combat Support Wing
+7100th Headquarters Command Wing 7100th Headquarters Support Wing 7100th Support Wing
+7101st Air Base Wing (USAFE Base Command)
+7108th Tactical Wing
+7117th Tactical Wing
+7121st Tactical Wing
+7122d Tactical Wing
+7131st Tactical Wing
+7149th Tactical Fighter Wing
+7150th AF Composite Wing
+7200th Air Force Depot Wing
+7272d Air Base Wing 7272d Flying Training Wing
+7280th Air Depot Wing
+7300th AF Composite Wing
+7310th Air Base Wing 7310th Tactical Airlift Wing
+7322d Air Base Wing
+7330th Training Wing 7330th Flying Training Wing
+7330th Technical Training Wing
+7331st Technical Training Wing
+7351st Flying Training Wing
+7373d Air Depot Wing
+Composite Wing, Provisional, 7440th Wing, Provisional 7440th
+7445th Tactical Intelligence Wing
+7485th Air Depot Wing 7485th Support Wing (Training)
+7490th Wing (Provisional)
+7493d Special Investigations Wing
+Tactical Fighter Wing, Provisional, 7499th
+7502d Air Support Wing
+7503d Air Support Wing
+7504th Air Support Wing
+7511th Air Support Wing
+7601st Air Base Wing
+7602d Support Wing
+8500th Air Weather Wing
+8600th Pilot Training Wing
+8601st Basic Pilot Training Wing 8601st Pilot Training Wing
+8602d Technical Training Wing
+8605th Technical Training Wing
+8635th Technical Training Wing
+8706th Pilot Training Wing
+8707th Pilot Training Wing
+8708th Pilot Training Wing
+8710th Pilot Training Wing
+8711th Pilot Training Wing
+9006th Volunteer Air Reserve Training Wing
+9007th Volunteer Air Reserve Training Wing
+9044th Volunteer Air Reserve Training Wing
+
