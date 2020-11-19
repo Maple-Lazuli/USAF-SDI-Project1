@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-const port = 6001
+const port = 6000
 const fs = require('fs');
 let unit = JSON.parse(fs.readFileSync("unitData.json"))
 app.use(bodyParser.urlencoded({ extended: false }))
