@@ -48,7 +48,7 @@ app.get('/usersWithTroops/', (req, res) => { //get all users with troops
 
 
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`Account Manager Mock app listening at http://localhost:${port}`))
 
 
 
