@@ -4,8 +4,8 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Stevens",
         "lastName": "Mitchel",
-        "userid": "user24",
-        "sessionid": "user24",
+        "userid": "24",
+        "sessionid": "24",
         "paygrade": "E-2",
         "rank": "Amn",
         "gender": "Female",
@@ -18,8 +18,8 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Athanasios",
         "lastName": "Peloquin",
-        "userid": "user26",
-        "sessionid": "user26",
+        "userid": "26",
+        "sessionid": "26",
         "paygrade": "E-9",
         "rank": "CMSgt",
         "gender": "Male",
