@@ -21,14 +21,19 @@ describe('GET /api/v1/users', function() {
             res.body[0].should.have.property('firstName');
             res.body[0].firstName.should.equal('Stevens');
             res.body[0].should.have.property('lastName');
-            res.body[0].lastName.should.equal('Stevens');
-            res.body[0].should.have.property('firstName');
-            res.body[0].userid.should.equal('Stevens');
-            res.body[0].should.have.property('firstName');
-            res.body[0].firstName.should.equal('Stevens');
-            res.body[0].should.have.property('firstName');
-            res.body[0].firstName.should.equal('Stevens');
-            
+            res.body[0].lastName.should.equal('Mitchel');
+            res.body[0].should.have.property('paygrade');
+            res.body[0].paygrade.should.equal('E-2');
+            res.body[0].should.have.property('rank');
+            res.body[0].rank.should.equal('Amn');
+            res.body[0].should.have.property('gender');
+            res.body[0].gender.should.equal('Fmale');
+            res.body[0].should.have.property('AFSC');
+            res.body[0].AFSC.should.equal('1Q251A'); 
+            res.body[0].should.have.property('unit');
+            res.body[0].unit.should.equal('6101st Air Base Wing');
+            res.body[0].should.have.property('DOR');
+            res.body[0].DOR.should.equal('1-5-1998');
             res.body[0].explicit.should.equal(false);
             done();
         })
