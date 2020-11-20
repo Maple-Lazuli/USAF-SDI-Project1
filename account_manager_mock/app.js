@@ -31,21 +31,43 @@ app.get('/users/:id', (req, res) => { //get the user by ID
 
 app.get('/subordinates/:id', (req, res) => { //get the user's troops
     res.send(unit.filter(user =>
-            user.userid == req.params.id)
-            .map(user => {
-                return user.subordinates
-            })[0])
+        user.userid == req.params.id)
+        .map(user => {
+            return user.subordinates
+        })[0])
 })
 
 app.get('/usersWithTroops/', (req, res) => { //get all users with troops
     res.send(unit.filter(user =>
-            user.subordinates.length != 0)
-            .map(user => {
-                return `user: ${user.userid}, `
-            })
+        user.subordinates.length != 0)
+        .map(user => {
+            return `user: ${user.userid}, `
+        })
     )
 })
 
+app.get('/supervisor/:id', (req, res) => { //return the user's supervisor and start date.
+    supervisor = {
+        supervisorID: '',
+        DateOfSupervison: '',
+    }
+    unit.forEach(airmen => {
+        airmen.subordinates.forEach(subordinate => {
+            if ((subordinate.subordinateID == req.params.id) && (supervisor.supervisorID === '')){
+                supervisor.supervisorID = airmen.userid
+                supervisor.DateOfSupervison = subordinate.DateOfSupervison
+            }
+            
+        })
+    })
+    if (supervisor.supervisorID === '') {
+        res.status(400).send("No Supervisor Found")
+    } else {
+
+        res.status(200).send(supervisor)
+    }
+
+})
 
 
 app.listen(port, () => console.log(`Account Manager Mock app listening at http://localhost:${port}`))
