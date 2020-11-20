@@ -1,13 +1,13 @@
 var knex = require('./knex.js');
 
-function Shows() {
+function Users() {
   return knex('users');
 }
 
 // *** queries *** //
 
 function getAll() {
-  return Shows().select();
+  return Users().select();
 }
 
 

@@ -9,10 +9,10 @@ var server = require('../app');
 
 chai.use(chaiHttp);
 
-describe('GET /api/v1/users', function() {
+describe('GET /api/v1/users/', function() {
     it('should return all users', function(done) {
         chai.request(server)
-        .get('/api/v1/shows')
+        .get('/api/v1/users/')
         .end(function(err,res) {
             res.should.have.status(200);
             res.should.be.json;
@@ -27,14 +27,13 @@ describe('GET /api/v1/users', function() {
             res.body[0].should.have.property('rank');
             res.body[0].rank.should.equal('Amn');
             res.body[0].should.have.property('gender');
-            res.body[0].gender.should.equal('Fmale');
+            res.body[0].gender.should.equal('Female');
             res.body[0].should.have.property('AFSC');
             res.body[0].AFSC.should.equal('1Q251A'); 
             res.body[0].should.have.property('unit');
             res.body[0].unit.should.equal('6101st Air Base Wing');
             res.body[0].should.have.property('DOR');
             res.body[0].DOR.should.equal('1-5-1998');
-            res.body[0].explicit.should.equal(false);
             done();
         })
     })
