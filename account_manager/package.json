@@ -1,0 +1,25 @@
+{
+  "name": "account_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-node8": "^1.2.0",
+    "chai": "^4.2.0",
+    "config": "^3.3.2",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "mongoose": "^5.10.15",
+    "nodemon": "^2.0.6",
+    "postgres": "^1.0.2",
+    "supertest": "^6.0.1"
+  }
+}
