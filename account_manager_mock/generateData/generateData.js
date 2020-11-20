@@ -49,7 +49,8 @@ for (let i = 1; i < numMembers; i++) {
     currentSM.subordinates = []
     currentSM.subIDs = []
     currentSM.DOR = `${month}-${day}-${year}`
-    currentSM.userid = `user${i}`
+    currentSM.userid = `${i}`
+    currentSM.session = `${i}`
     currentSM.gender = genders[Math.floor((Math.random() * genders.length))]
 
     //10 attempts to find a sub

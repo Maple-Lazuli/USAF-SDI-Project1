@@ -4,8 +4,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Stevens",
         "lastName": "Mitchel",
-        "userid": "24",
-        "sessionid": "24",
+        "sessionid": 24,
         "paygrade": "E-2",
         "rank": "Amn",
         "gender": "Female",
@@ -18,8 +17,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Athanasios",
         "lastName": "Peloquin",
-        "userid": "26",
-        "sessionid": "26",
+        "sessionid": 26,
         "paygrade": "E-9",
         "rank": "CMSgt",
         "gender": "Male",
@@ -32,8 +30,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Jeffrie",
         "lastName": "Caesar",
-        "userid": "user22",
-        "sessionid": "user22",
+        "sessionid": 22,
         "paygrade": "E-4",
         "rank": "SrA",
         "gender": "Female",
@@ -46,8 +43,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert({
         "firstName": "Vida",
         "lastName": "Romain",
-        "userid": "user21",
-        "sessionid": "user21",
+        "sessionid": 23,
         "paygrade": "E-3",
         "rank": "A1C",
         "gender": "Female",
