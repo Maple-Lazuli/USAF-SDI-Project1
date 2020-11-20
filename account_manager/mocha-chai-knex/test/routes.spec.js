@@ -11,25 +11,25 @@ chai.use(chaiHttp);
 
 describe('API Routes', function () {
 
-    beforeEach(function (done) {
-        knex.migrate.rollback()
-            .then(function () {
-                knex.migrate.latest()
-                    .then(function () {
-                        return knex.seed.run()
-                            .then(function () {
-                                done();
-                            });
-                    });
-            });
-    });
+    // beforeEach(function (done) {
+    //     knex.migrate.rollback()
+    //         .then(function () {
+    //             knex.migrate.latest()
+    //                 .then(function () {
+    //                     return knex.seed.run()
+    //                         .then(function () {
+    //                             done();
+    //                         });
+    //                 });
+    //         });
+    // });
 
-    afterEach(function (done) {
-        knex.migrate.rollback()
-            .then(function () {
-                done();
-            });
-    });
+    // afterEach(function (done) {
+    //     knex.migrate.rollback()
+    //         .then(function () {
+    //             done();
+    //         });
+    // });
 
 
 
@@ -37,7 +37,7 @@ describe('API Routes', function () {
     describe('GET /api/v1/all/', function () {
         it('should return all users', function (done) {
             chai.request(server)
-                .get('/api/v1/all/')
+                .get('/api/v1//users/all/')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;

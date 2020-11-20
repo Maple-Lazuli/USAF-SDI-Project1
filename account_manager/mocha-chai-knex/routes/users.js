@@ -5,7 +5,7 @@ var queries = require('../db/queries');
 
 
 // *** GET all users *** //
-router.get('/all', function(req, res, next) {
+router.get('/all/', function(req, res, next) {
   queries.getAll()
   .then(function(users) {
     res.status(200).json(users);
