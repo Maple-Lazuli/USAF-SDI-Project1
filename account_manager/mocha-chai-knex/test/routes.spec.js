@@ -11,6 +11,8 @@ chai.use(chaiHttp);
 
 describe('API Routes', function () {
 
+
+    //Before each test, migrate and seed the database
     beforeEach(function (done) {
         knex.migrate.rollback()
             .then(function () {
@@ -23,7 +25,7 @@ describe('API Routes', function () {
                     });
             });
     });
-
+    //After each test, clear the database
     afterEach(function (done) {
         knex.migrate.rollback()
             .then(function () {
@@ -65,12 +67,12 @@ describe('API Routes', function () {
     });
 
 
-
+    //Test for existing user
     describe('Get /api/v1/user/:id', function () {
         it('should return the user that matches the ID', function (done) {
             chai.request(server)
                 .get('/api/v1/user/2')
-                .end(function (err,res) {
+                .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;
                     res.should.be.a('object');
@@ -94,5 +96,16 @@ describe('API Routes', function () {
                 })
         })
     })
-
+    
+    //Test for nonexistent User
+    describe('Get /api/v1/user/:id', function () {
+        it('should return in indication that the user was not found', function (done) {
+            chai.request(server)
+            .get('/api/v1/user/50000')
+            .end(function(err,res) {
+                res.should.have.status(400);
+                done();
+            })
+        })
+    })
 });

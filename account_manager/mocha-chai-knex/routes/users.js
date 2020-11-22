@@ -5,30 +5,30 @@ var queries = require('../db/queries');
 
 
 // *** GET all users *** //
-router.get('/all/', function(req, res, next) {
+router.get('/all/', function (req, res, next) {
   queries.getAll()
-  .then(function(users) {
-    res.status(200).json(users);
-  })
-  .catch(function(error) {
-    next(error);
-  });
+    .then(function (users) {
+      res.status(200).json(users);
+    })
+    .catch(function (error) {
+      next(error);
+    });
 });
 
 
 
 // ***Get one user *** //
-router.get('/user/:id', function(req, res, next) {
+router.get('/user/:id', function (req, res, next) {
   queries.getUser(req.params.id)
-  .then(function(users) {
-    if(users.length == 1)
-      res.status(200).json(users);
-    else 
-      res.status(400).send("User Not Found")
-  })
-  .catch(function(error) {
-    next(error);
-  });
+    .then(function (users) {
+      if (users.length == 1)
+        res.status(200).json(users);
+      else
+        res.status(400).send("User Not Found")
+    })
+    .catch(function (error) {
+      next(error);
+    });
 });
 
 module.exports = router;
