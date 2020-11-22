@@ -31,4 +31,18 @@ router.get('/user/:id', function (req, res, next) {
     });
 });
 
+
+router.get('/userSession/:sessionId', function (req, res, next) {
+  queries.getUserBySession(req.params.sessionId)
+    .then(function (users) {
+      if (users.length == 1)
+        res.status(200).json(users);
+      else
+        res.status(400).send("User Session Not Found")
+    })
+    .catch(function (error) {
+      next(error);
+    });
+});
+
 module.exports = router;

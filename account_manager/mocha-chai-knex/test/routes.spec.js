@@ -96,16 +96,59 @@ describe('API Routes', function () {
                 })
         })
     })
-    
+
     //Test for nonexistent User
     describe('Get /api/v1/user/:id', function () {
         it('should return in indication that the user was not found', function (done) {
             chai.request(server)
-            .get('/api/v1/user/50000')
-            .end(function(err,res) {
+                .get('/api/v1/user/50000')
+                .end(function (err, res) {
+                    res.should.have.status(400);
+                    done();
+                })
+        })
+    })
+
+//Test for existing user by sessionID
+describe('Get /api/v1/userSession/:sessionID', function () {
+    it('should return the user that matches the ID', function (done) {
+        chai.request(server)
+            .get('/api/v1/userSession/22')
+            .end(function (err, res) {
+                res.should.have.status(200);
+                res.should.be.json;
+                res.should.be.a('object');
+                res.body[0].should.have.property('firstName');
+                res.body[0].firstName.should.equal('Jeffrie');
+                res.body[0].should.have.property('lastName');
+                res.body[0].lastName.should.equal('Caesar');
+                res.body[0].should.have.property('paygrade');
+                res.body[0].paygrade.should.equal('E-4');
+                res.body[0].should.have.property('rank');
+                res.body[0].rank.should.equal('SrA');
+                res.body[0].should.have.property('gender');
+                res.body[0].gender.should.equal('Female');
+                res.body[0].should.have.property('AFSC');
+                res.body[0].AFSC.should.equal('1Q251A');
+                res.body[0].should.have.property('unit');
+                res.body[0].unit.should.equal('4950th Test Wing');
+                res.body[0].should.have.property('DOR');
+                res.body[0].DOR.should.equal('2-7-2020');
+                done();
+            })
+    })
+})
+
+//Test for nonexistent User Session
+describe('Get /api/v1/userSession/:sessionID', function () {
+    it('should return in indication that the user was not found', function (done) {
+        chai.request(server)
+            .get('/api/v1/userSession/50000')
+            .end(function (err, res) {
                 res.should.have.status(400);
                 done();
             })
-        })
     })
+})
+
 });

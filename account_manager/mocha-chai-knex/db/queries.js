@@ -14,7 +14,12 @@ function getUser(userID) {
     return Users().where('userid', parseInt(userID))
 }
 
+function getUserBySession(sessionID) {
+    return Users().where('sessionid', parseInt(sessionID))
+}
+
 module.exports = {
     getAll: getAll,
-    getUser: getUser
+    getUser: getUser,
+    getUserBySession:getUserBySession
 };
