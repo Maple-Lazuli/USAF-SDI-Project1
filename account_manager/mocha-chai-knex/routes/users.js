@@ -15,11 +15,16 @@ router.get('/all/', function(req, res, next) {
   });
 });
 
+
+
 // ***Get one user *** //
-router.get('/users/:id', function(req, res, next) {
+router.get('/user/:id', function(req, res, next) {
   queries.getUser(req.params.id)
   .then(function(users) {
-    res.status(200).json(users);
+    if(users.length == 1)
+      res.status(200).json(users);
+    else 
+      res.status(400).send("User Not Found")
   })
   .catch(function(error) {
     next(error);

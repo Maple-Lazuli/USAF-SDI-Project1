@@ -11,7 +11,7 @@ function getAll() {
 }
 
 function getUser(userID) {
-    return Users().select
+    return Users().where('userid', parseInt(userID))
 }
 
 module.exports = {
