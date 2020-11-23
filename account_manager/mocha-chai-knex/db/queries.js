@@ -50,9 +50,10 @@ function getSupervisor(userID) {
 }
 
 function addRelation(rel){
-    return Supervisors().insert(rel, )
+    return Supervisors().insert(rel,)
 }
 
+// function removeRelation(rel)
 
 module.exports = {
     getAll: getAll,
