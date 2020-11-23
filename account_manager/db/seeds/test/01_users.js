@@ -1,5 +1,5 @@
 exports.seed = function (knex, Promise) {
-  return knex('users').del() // Deletes ALL existing entries
+  return  knex('users').del() // Deletes ALL existing entries
     .then(function () { // Inserts seed entries one by one in series
       return knex('users').insert({
         "firstName": "Stevens",
@@ -68,6 +68,12 @@ exports.seed = function (knex, Promise) {
         }).then(function () {
           return knex('supervisors').insert({
             user: 2,
+            supervisor: 4
+          })
+        })
+        .then(function () {
+          return knex('supervisors').insert({
+            user: 1,
             supervisor: 4
           })
         })
