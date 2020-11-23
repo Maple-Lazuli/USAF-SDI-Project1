@@ -65,6 +65,17 @@ exports.seed = function (knex, Promise) {
             user: 3,
             supervisor: 4
           })
-        });
+        }).then(function () {
+          return knex('supervisors').insert({
+            user: 2,
+            supervisor: 4
+          })
+        })
+        .then(function () {
+          return knex('supervisors').insert({
+            user: 1,
+            supervisor: 4
+          })
+        })
     });
 };
