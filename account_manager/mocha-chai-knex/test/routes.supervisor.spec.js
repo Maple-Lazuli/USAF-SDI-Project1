@@ -61,8 +61,26 @@ describe('API Routes', function () {
                     res.should.be.json; // jshint ignore:line
                     res.body.should.be.a('array');
                     res.body.length.should.equal(1);
+                    res.body[0].should.have.property('user');
+                    res.body[0].user.should.equal(1);
                     done();
                 });
         })
     })
+    describe('GET /api/v1/supervisors/supervisor/:id', function () {
+        it('should return all supervises', function (done) {
+            chai.request(server)
+                .get('/api/v1/supervisors/supervisor/2')
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json; // jshint ignore:line
+                    res.body.should.be.a('array');
+                    res.body.length.should.equal(1);
+                    res.body[0].should.have.property('supervisor');
+                    res.body[0].user.should.equal(2);
+                    done();
+                });
+        })
+    })
+    
 })
