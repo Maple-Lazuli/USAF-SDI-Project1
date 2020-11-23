@@ -53,7 +53,9 @@ function addRelation(rel){
     return Supervisors().insert(rel,)
 }
 
-// function removeRelation(rel)
+function removeRelation(rel) {
+    return Supervisors().where('user', parseInt(rel.user)).where('supervisor',parseInt(rel.supervisor)).del()
+}
 
 module.exports = {
     getAll: getAll,
@@ -65,5 +67,6 @@ module.exports = {
     getRelations:getRelations,
     getSupervisees:getSupervisees,
     getSupervisor:getSupervisor,
-    addRelation:addRelation
+    addRelation:addRelation,
+    removeRelation:removeRelation
 };

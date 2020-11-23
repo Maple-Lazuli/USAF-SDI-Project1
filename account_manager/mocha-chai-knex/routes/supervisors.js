@@ -36,13 +36,23 @@ router.get('/supervisor/:id', function (req, res, next) {
 });
 
 router.post('/add', function (req, res, next) {
-  queries.addRelation(req.body)
-    .then(function () {
-      res.status(200).send("Relation Added");
-    })
-    .catch(function (error) {
-      next(error);
-    });
+    queries.addRelation(req.body)
+        .then(function () {
+            res.status(200).send("Relation Added");
+        })
+        .catch(function (error) {
+            next(error);
+        });
+});
+
+router.delete('/remove', function (req, res, next) {
+    queries.removeRelation(req.body)
+        .then(function (rel) {
+            res.status(200).send('Relation Was Removed');
+        })
+        .catch(function (error) {
+            next(error);
+        });
 });
 
 

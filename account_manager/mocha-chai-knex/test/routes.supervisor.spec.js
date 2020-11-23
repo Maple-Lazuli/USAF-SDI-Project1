@@ -84,9 +84,24 @@ describe('API Routes', function () {
     })
 
     describe('POST /api/v1/supervisors/add/', function () {
-        it('should add a user', function (done) {
+        it('should add a relation', function (done) {
             chai.request(server)
                 .post('/api/v1/supervisors/add/')
+                .send({
+                    "user": 4,
+                    "supervisor": 3
+                })
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    done();
+                })
+        })
+    })
+
+    describe('DELETE /api/v1/supervisors/remove/', function () {
+        it('should remove a relation', function (done) {
+            chai.request(server)
+                .delete('/api/v1/supervisors/remove/')
                 .send({
                     "user": 4,
                     "supervisor": 3
