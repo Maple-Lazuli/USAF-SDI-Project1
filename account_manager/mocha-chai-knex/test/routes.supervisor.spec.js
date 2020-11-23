@@ -20,9 +20,9 @@ describe('API Routes', function () {
                     res.body.should.be.a('array');
                     res.body.length.should.equal(2);
                     res.body[0].should.have.property('user');
-                    res.body[0].user.should.equal('1');
+                    res.body[0].user.should.equal(1);
                     res.body[0].should.have.property('supervisor');
-                    res.body[0].supervisor.should.equal('2');
+                    res.body[0].supervisor.should.equal(2);
                     done();
                 });
         });

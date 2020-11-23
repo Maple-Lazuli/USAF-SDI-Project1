@@ -1,6 +1,6 @@
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   return knex('users').del() // Deletes ALL existing entries
-    .then(function() { // Inserts seed entries one by one in series
+    .then(function () { // Inserts seed entries one by one in series
       return knex('users').insert({
         "firstName": "Stevens",
         "lastName": "Mitchel",
@@ -52,5 +52,19 @@ exports.seed = function(knex, Promise) {
         "unit": "4070th Support Wing",
         "DOR": "1-15-2008"
       });
+    }).then(function () {
+      knex('supervisors').del()
+        .then(function () {
+          // Inserts seed entries
+          return knex('supervisors').insert({
+            user: 1,
+            supervisor: 2
+          })
+        }).then(function () {
+          return knex('supervisors').insert({
+            user: 3,
+            supervisor: 4
+          })
+        });
     });
 };
