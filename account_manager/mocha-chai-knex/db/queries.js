@@ -42,6 +42,11 @@ function getRelations() {
     return Supervisors().select();
 }
 
+function getSupervisees(userID) {
+    return Supervisors().where('supervisor', parseInt(userID)).select('user')
+}
+
+
 module.exports = {
     getAll: getAll,
     getUser: getUser,
@@ -49,5 +54,6 @@ module.exports = {
     addUser: addUser,
     updateUser: updateUser,
     deleteUser: deleteUser,
-    getRelations:getRelations
+    getRelations:getRelations,
+    getSupervisees:getSupervisees
 };
