@@ -43,14 +43,14 @@ function getRelations() {
 }
 
 function getSupervisees(userID) {
-    return Supervisors().where('supervisor', parseInt(userID)).select('user')
+    return Supervisors().where('supervisor', parseInt(userID))
 }
 function getSupervisor(userID) {
-    return Supervisors().where('user', parseInt(userID)).select('supervisor')
+    return Supervisors().where('user', parseInt(userID))
 }
 
-function addRelation(userID, supervisorID){
-    return Supervisors().insert({'user': userID, 'supervisor':supervisorID})
+function addRelation(rel){
+    return Supervisors().insert(rel, )
 }
 
 

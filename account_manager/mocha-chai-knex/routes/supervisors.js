@@ -35,14 +35,14 @@ router.get('/supervisor/:id', function (req, res, next) {
         });
 });
 
-router.get('/add/:userID&:supervisorID', function (req, res, next) {
-    queries.addRelation(req.params.userID, req.params.supervisorID)
-        .then(function (rels) {
-            res.status(200).json(rels);
-        })
-        .catch(function (error) {
-            next(error);
-        });
+router.post('/add', function (req, res, next) {
+  queries.addRelation(req.body)
+    .then(function () {
+      res.status(200).send("Relation Added");
+    })
+    .catch(function (error) {
+      next(error);
+    });
 });
 
 
