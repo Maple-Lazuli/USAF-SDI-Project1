@@ -24,8 +24,12 @@ function addUser(user) {
 
 
 function updateUser(userID, updates) {
-        return Users().where('userid', parseInt(userID)).update(updates);
+    return Users().where('userid', parseInt(userID)).update(updates);
 }
+
+// function deleteUser(userID){
+
+// }
 
 module.exports = {
     getAll: getAll,
@@ -33,4 +37,5 @@ module.exports = {
     getUserBySession: getUserBySession,
     addUser: addUser,
     updateUser: updateUser
+    
 };
