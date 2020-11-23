@@ -21,9 +21,16 @@ function getUserBySession(sessionID) {
 function addUser(user) {
     return Users().insert(user, 'userid')
 }
+
+
+function updateUser(userID, updates) {
+        return Users().where('userid', parseInt(userID)).update(updates);
+}
+
 module.exports = {
     getAll: getAll,
     getUser: getUser,
-    getUserBySession:getUserBySession,
-    addUser:addUser
+    getUserBySession: getUserBySession,
+    addUser: addUser,
+    updateUser: updateUser
 };

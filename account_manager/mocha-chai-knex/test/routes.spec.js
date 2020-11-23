@@ -164,7 +164,7 @@ describe('API Routes', function () {
                     "rank": "SSgt",
                     "gender": "Female",
                     "rankInt": 5,
-                    "AFSC": "1N271C",
+                    "AFSC": "1N251C",
                     "unit": "6101st Air Base Wing",
                     "DOR": "8-1-2019"
                 })
@@ -183,7 +183,7 @@ describe('API Routes', function () {
                     res.body[0].should.have.property('gender');
                     res.body[0].gender.should.equal('Female');
                     res.body[0].should.have.property('AFSC');
-                    res.body[0].AFSC.should.equal('1N271C');
+                    res.body[0].AFSC.should.equal('1N251C');
                     res.body[0].should.have.property('unit');
                     res.body[0].unit.should.equal('6101st Air Base Wing');
                     res.body[0].should.have.property('DOR');
@@ -193,4 +193,50 @@ describe('API Routes', function () {
         })
     })
 
-});
+    describe('PUT /api/vi/user/:id', function () {
+        it('should update a user', function (done) {
+            chai.request(server)
+                .put('/api/v1/user/1')
+                .send({
+                    AFSC: '1N271C',
+                    lastName: 'Owens'
+                })
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.should.be.a('object');
+                    res.body[0].should.have.property('firstName');
+                    res.body[0].firstName.should.equal('Stevens');
+                    res.body[0].should.have.property('lastName');
+                    res.body[0].lastName.should.equal('Owens');
+                    res.body[0].should.have.property('paygrade');
+                    res.body[0].paygrade.should.equal('E-2');
+                    res.body[0].should.have.property('rank');
+                    res.body[0].rank.should.equal('Amn');
+                    res.body[0].should.have.property('gender');
+                    res.body[0].gender.should.equal('Female');
+                    res.body[0].should.have.property('AFSC');
+                    res.body[0].AFSC.should.equal('1N271C');
+                    res.body[0].should.have.property('unit');
+                    res.body[0].unit.should.equal('6101st Air Base Wing');
+                    res.body[0].should.have.property('DOR');
+                    res.body[0].DOR.should.equal('1-5-1998');
+                    done();
+                })
+        })
+    })
+    describe('PUT /api/vi/user/:id', function () {
+        it('should error when updating a user that does not exist', function (done) {
+            chai.request(server)
+                .put('/api/v1/user/100')
+                .send({
+                    AFSC: '1N271C',
+                    lastName: 'Owens'
+                })
+                .end(function (err, res) {
+                    res.should.have.status(400);
+                    done();
+                });
+        })
+    })
+})
