@@ -152,10 +152,10 @@ describe('API Routes', function () {
     })
 
     // Test for adding users to the database
-    describe('POST /api/v1/addUser', function () {
+    describe('POST /api/v1/user', function () {
         it('should add a user', function (done) {
             chai.request(server)
-                .post('/api/v1/addUser')
+                .post('/api/v1/user')
                 .send({
                     "firstName": "Ada",
                     "lastName": "Lazuli",

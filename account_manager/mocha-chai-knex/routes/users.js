@@ -45,7 +45,7 @@ router.get('/userSession/:sessionId', function (req, res, next) {
     });
 });
 
-router.post('/addUser', function (req, res, next) {
+router.post('/user', function (req, res, next) {
   queries.addUser(req.body)
     .then(function (userid) {
       return queries.getUser(userid)
