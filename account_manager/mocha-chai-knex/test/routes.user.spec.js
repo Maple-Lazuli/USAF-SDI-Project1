@@ -36,10 +36,10 @@ describe('API Routes', function () {
 
 
     // Test for pull all users
-    describe('GET /api/v1/all/', function () {
+    describe('GET /api/v1/users/all/', function () {
         it('should return all users', function (done) {
             chai.request(server)
-                .get('/api/v1/all/')
+                .get('/api/v1/users/all/')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;
@@ -68,10 +68,10 @@ describe('API Routes', function () {
 
 
     //Test for existing user
-    describe('Get /api/v1/user/:id', function () {
+    describe('Get /api/v1/users/user/:id', function () {
         it('should return the user that matches the ID', function (done) {
             chai.request(server)
-                .get('/api/v1/user/2')
+                .get('/api/v1/users/user/2')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;
@@ -98,10 +98,10 @@ describe('API Routes', function () {
     })
 
     //Test for nonexistent User
-    describe('Get /api/v1/user/:id', function () {
+    describe('Get /api/v1/users/user/:id', function () {
         it('should return in indication that the user was not found', function (done) {
             chai.request(server)
-                .get('/api/v1/user/50000')
+                .get('/api/v1/users/user/50000')
                 .end(function (err, res) {
                     res.should.have.status(400);
                     done();
@@ -110,10 +110,10 @@ describe('API Routes', function () {
     })
 
     //Test for existing user by sessionID
-    describe('Get /api/v1/userSession/:sessionID', function () {
+    describe('Get /api/v1/users/userSession/:sessionID', function () {
         it('should return the user that matches the ID', function (done) {
             chai.request(server)
-                .get('/api/v1/userSession/22')
+                .get('/api/v1/users/userSession/22')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;
@@ -140,10 +140,10 @@ describe('API Routes', function () {
     })
 
     //Test for nonexistent User Session
-    describe('Get /api/v1/userSession/:sessionID', function () {
+    describe('Get /api/v1/users/userSession/:sessionID', function () {
         it('should return in indication that the user was not found', function (done) {
             chai.request(server)
-                .get('/api/v1/userSession/50000')
+                .get('/api/v1/users/userSession/50000')
                 .end(function (err, res) {
                     res.should.have.status(400);
                     done();
@@ -152,10 +152,10 @@ describe('API Routes', function () {
     })
 
     // Test for adding users to the database
-    describe('POST /api/v1/user', function () {
+    describe('POST /api/v1/users/user', function () {
         it('should add a user', function (done) {
             chai.request(server)
-                .post('/api/v1/user')
+                .post('/api/v1/users/user')
                 .send({
                     "firstName": "Ada",
                     "lastName": "Lazuli",
@@ -193,10 +193,10 @@ describe('API Routes', function () {
         })
     })
 
-    describe('PUT /api/vi/user/:id', function () {
+    describe('PUT /api/vi/users/user/:id', function () {
         it('should update a user', function (done) {
             chai.request(server)
-                .put('/api/v1/user/1')
+                .put('/api/v1/users/user/1')
                 .send({
                     AFSC: '1N271C',
                     lastName: 'Owens'
@@ -225,10 +225,10 @@ describe('API Routes', function () {
                 })
         })
     })
-    describe('PUT /api/vi/user/:id', function () {
+    describe('PUT /api/vi/users/user/:id', function () {
         it('should error when updating a user that does not exist', function (done) {
             chai.request(server)
-                .put('/api/v1/user/100')
+                .put('/api/v1/users/user/100')
                 .send({
                     AFSC: '1N271C',
                     lastName: 'Owens'
@@ -240,10 +240,10 @@ describe('API Routes', function () {
         })
     })
 
-    describe('DELETE /api/v1/user/:id', function () {
+    describe('DELETE /api/v1/users/user/:id', function () {
         it('should DELETE a user', function (done) {
             chai.request(server)
-                .delete('/api/v1/user/1')
+                .delete('/api/v1/users/user/1')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json;
@@ -265,7 +265,7 @@ describe('API Routes', function () {
                     res.body[0].should.have.property('DOR');
                     res.body[0].DOR.should.equal('1-5-1998');
                     chai.request(server)
-                        .get('/api/v1/all')
+                        .get('/api/v1/users/all')
                         .end(function (err, res) {
                             res.should.have.status(200);
                             res.should.be.json;

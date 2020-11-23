@@ -4,7 +4,11 @@ function Users() {
     return knex('users');
 }
 
-// *** queries *** //
+function Supervisors() {
+    return knex('supervisors');
+}
+
+// *** user queries *** //
 
 function getAll() {
     return Users().select();
@@ -31,12 +35,19 @@ function deleteUser(userID){
     return Users().where('userid', parseInt(userID)).del();
 }
 
+
+// *** supervisor queries *** //
+
+function getRelations() {
+    return Supervisors().select();
+}
+
 module.exports = {
     getAll: getAll,
     getUser: getUser,
     getUserBySession: getUserBySession,
     addUser: addUser,
     updateUser: updateUser,
-    deleteUser: deleteUser
-
+    deleteUser: deleteUser,
+    getRelations:getRelations
 };
