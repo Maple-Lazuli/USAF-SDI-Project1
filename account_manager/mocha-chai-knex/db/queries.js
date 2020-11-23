@@ -27,15 +27,16 @@ function updateUser(userID, updates) {
     return Users().where('userid', parseInt(userID)).update(updates);
 }
 
-// function deleteUser(userID){
-
-// }
+function deleteUser(userID){
+    return Users().where('userid', parseInt(userID)).del();
+}
 
 module.exports = {
     getAll: getAll,
     getUser: getUser,
     getUserBySession: getUserBySession,
     addUser: addUser,
-    updateUser: updateUser
-    
+    updateUser: updateUser,
+    deleteUser: deleteUser
+
 };

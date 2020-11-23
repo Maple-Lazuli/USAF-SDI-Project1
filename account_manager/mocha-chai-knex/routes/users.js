@@ -79,5 +79,21 @@ router.put('/user/:id', function (req, res, next) {
     });
 });
 
+router.delete('/user/:id', function(req, res, next){
+  queries.getUser(req.params.id)
+  .then(function(user){
+    queries.deleteUser(req.params.id)
+    .then(function() {
+      res.status(200).json(user);
+    })
+    .catch(function(error){
+      next(error)
+    })
+  }).catch(function(error){
+    next(error);
+  })
+})
+
+
 
 module.exports = router;
