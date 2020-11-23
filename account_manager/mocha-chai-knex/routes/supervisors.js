@@ -25,6 +25,16 @@ router.get('/supervisee/:id', function (req, res, next) {
         });
 });
 
+router.get('/supervisor/:id', function (req, res, next) {
+    queries.getSupervisor(req.params.id)
+        .then(function (rels) {
+            res.status(200).json(rels);
+        })
+        .catch(function (error) {
+            next(error);
+        });
+});
+
 
 
 

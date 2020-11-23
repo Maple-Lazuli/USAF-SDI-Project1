@@ -53,7 +53,7 @@ describe('API Routes', function () {
         });
     });
     describe('GET /api/v1/supervisors/supervisee/:id', function () {
-        it('should return all supervises', function (done) {
+        it('should troops of the user', function (done) {
             chai.request(server)
                 .get('/api/v1/supervisors/supervisee/2')
                 .end(function (err, res) {
@@ -68,16 +68,16 @@ describe('API Routes', function () {
         })
     })
     describe('GET /api/v1/supervisors/supervisor/:id', function () {
-        it('should return all supervises', function (done) {
+        it('should return supervisor of the user', function (done) {
             chai.request(server)
-                .get('/api/v1/supervisors/supervisor/2')
+                .get('/api/v1/supervisors/supervisor/1')
                 .end(function (err, res) {
                     res.should.have.status(200);
                     res.should.be.json; // jshint ignore:line
                     res.body.should.be.a('array');
                     res.body.length.should.equal(1);
                     res.body[0].should.have.property('supervisor');
-                    res.body[0].user.should.equal(2);
+                    res.body[0].supervisor.should.equal(2);
                     done();
                 });
         })
