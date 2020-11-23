@@ -45,4 +45,17 @@ router.get('/userSession/:sessionId', function (req, res, next) {
     });
 });
 
+router.post('/addUser', function (req, res, next) {
+  queries.addUser(req.body)
+    .then(function (userid) {
+      return queries.getUser(userid)
+    })
+    .then(function (user) {
+      res.status(200).json(user);
+    })
+    .catch(function (error) {
+      next(error);
+    });
+});
+
 module.exports = router;

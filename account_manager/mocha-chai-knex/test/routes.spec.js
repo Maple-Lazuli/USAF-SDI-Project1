@@ -109,46 +109,88 @@ describe('API Routes', function () {
         })
     })
 
-//Test for existing user by sessionID
-describe('Get /api/v1/userSession/:sessionID', function () {
-    it('should return the user that matches the ID', function (done) {
-        chai.request(server)
-            .get('/api/v1/userSession/22')
-            .end(function (err, res) {
-                res.should.have.status(200);
-                res.should.be.json;
-                res.should.be.a('object');
-                res.body[0].should.have.property('firstName');
-                res.body[0].firstName.should.equal('Jeffrie');
-                res.body[0].should.have.property('lastName');
-                res.body[0].lastName.should.equal('Caesar');
-                res.body[0].should.have.property('paygrade');
-                res.body[0].paygrade.should.equal('E-4');
-                res.body[0].should.have.property('rank');
-                res.body[0].rank.should.equal('SrA');
-                res.body[0].should.have.property('gender');
-                res.body[0].gender.should.equal('Female');
-                res.body[0].should.have.property('AFSC');
-                res.body[0].AFSC.should.equal('1Q251A');
-                res.body[0].should.have.property('unit');
-                res.body[0].unit.should.equal('4950th Test Wing');
-                res.body[0].should.have.property('DOR');
-                res.body[0].DOR.should.equal('2-7-2020');
-                done();
-            })
+    //Test for existing user by sessionID
+    describe('Get /api/v1/userSession/:sessionID', function () {
+        it('should return the user that matches the ID', function (done) {
+            chai.request(server)
+                .get('/api/v1/userSession/22')
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.should.be.a('object');
+                    res.body[0].should.have.property('firstName');
+                    res.body[0].firstName.should.equal('Jeffrie');
+                    res.body[0].should.have.property('lastName');
+                    res.body[0].lastName.should.equal('Caesar');
+                    res.body[0].should.have.property('paygrade');
+                    res.body[0].paygrade.should.equal('E-4');
+                    res.body[0].should.have.property('rank');
+                    res.body[0].rank.should.equal('SrA');
+                    res.body[0].should.have.property('gender');
+                    res.body[0].gender.should.equal('Female');
+                    res.body[0].should.have.property('AFSC');
+                    res.body[0].AFSC.should.equal('1Q251A');
+                    res.body[0].should.have.property('unit');
+                    res.body[0].unit.should.equal('4950th Test Wing');
+                    res.body[0].should.have.property('DOR');
+                    res.body[0].DOR.should.equal('2-7-2020');
+                    done();
+                })
+        })
     })
-})
 
-//Test for nonexistent User Session
-describe('Get /api/v1/userSession/:sessionID', function () {
-    it('should return in indication that the user was not found', function (done) {
-        chai.request(server)
-            .get('/api/v1/userSession/50000')
-            .end(function (err, res) {
-                res.should.have.status(400);
-                done();
-            })
+    //Test for nonexistent User Session
+    describe('Get /api/v1/userSession/:sessionID', function () {
+        it('should return in indication that the user was not found', function (done) {
+            chai.request(server)
+                .get('/api/v1/userSession/50000')
+                .end(function (err, res) {
+                    res.should.have.status(400);
+                    done();
+                })
+        })
     })
-})
+
+    // Test for adding users to the database
+    describe('POST /api/v1/addUser', function () {
+        it('should add a user', function (done) {
+            chai.request(server)
+                .post('/api/v1/addUser')
+                .send({
+                    "firstName": "Ada",
+                    "lastName": "Lazuli",
+                    "sessionid": 1,
+                    "paygrade": "E-5",
+                    "rank": "SSgt",
+                    "gender": "Female",
+                    "rankInt": 5,
+                    "AFSC": "1N271C",
+                    "unit": "6101st Air Base Wing",
+                    "DOR": "8-1-2019"
+                })
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.should.be.a('object');
+                    res.body[0].should.have.property('firstName');
+                    res.body[0].firstName.should.equal('Ada');
+                    res.body[0].should.have.property('lastName');
+                    res.body[0].lastName.should.equal('Lazuli');
+                    res.body[0].should.have.property('paygrade');
+                    res.body[0].paygrade.should.equal('E-5');
+                    res.body[0].should.have.property('rank');
+                    res.body[0].rank.should.equal('SSgt');
+                    res.body[0].should.have.property('gender');
+                    res.body[0].gender.should.equal('Female');
+                    res.body[0].should.have.property('AFSC');
+                    res.body[0].AFSC.should.equal('1N271C');
+                    res.body[0].should.have.property('unit');
+                    res.body[0].unit.should.equal('6101st Air Base Wing');
+                    res.body[0].should.have.property('DOR');
+                    res.body[0].DOR.should.equal('8-1-2019');
+                    done();
+                })
+        })
+    })
 
 });

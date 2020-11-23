@@ -18,8 +18,12 @@ function getUserBySession(sessionID) {
     return Users().where('sessionid', parseInt(sessionID))
 }
 
+function addUser(user) {
+    return Users().insert(user, 'userid')
+}
 module.exports = {
     getAll: getAll,
     getUser: getUser,
-    getUserBySession:getUserBySession
+    getUserBySession:getUserBySession,
+    addUser:addUser
 };
