@@ -7,7 +7,7 @@ describe('App', () => {
         const container = shallow(<App />);
         expect(container.find('div').length).toEqual(1);
     });
-    it('should render the timer component', () => {
-        expect(container.containsMatchingElement(<Timer />)).toEqual(true)
-    })
+    // it('should render the serachUser component', () => {
+    //     expect(container.containsMatchingElement(<SearchUser />)).toEqual(true)
+    // })
 });
