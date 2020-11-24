@@ -1,22 +1,29 @@
 import './App.css';
 import React from 'react'
-// import EmailList from './SearchUser';
-// import EmailDisplay from './CreateUser';
-// import SearchEmail from './UpdateUser';
-// import NewEmail from './AssignSupervisor';
+import RegisterUser from './RegisterUser'
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            emailImportArr: [],
-            filterArr: [],
-            currentEmailId: '',
-            currentSearchString: '',
-            newEmail: false,
-            lastID: null,
-            sendEmailBody: {}
+            currentUser = {},
+            searchString ={},
+            registerUser = true,
+            searchUser = false,
         }
     }
+
+    addUser = (body) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        };
+        fetch('http://localhost:3001/addUser', requestOptions)
+            .then(response => response.json())
+            .then(response => alert(response.message))
+    }
+
+
 
     render() {
         return (
@@ -46,8 +53,8 @@ class App extends React.Component {
                                     <a class="dropdown-item" href="#">View All Relationships</a>
                                     <a class="dropdown-item" href="#">Delete User</a>
                                     <a class="dropdown-item" href="#">Delete Relation</a>
-                                    
-                                    
+
+
                                 </div>
                             </li>
                         </ul>
@@ -60,7 +67,11 @@ class App extends React.Component {
 
                 <main role="main" class="container">
                     <div class="starter-template">
-                        {/* <h2>Bootstrap starter template</h2> */}
+                        {/* <h2>Heading </h2> */}
+                        {this.state.registerUser ?
+                            <RegisterUser /> :
+                            <div></div>}
+
                     </div>
 
                 </main>
