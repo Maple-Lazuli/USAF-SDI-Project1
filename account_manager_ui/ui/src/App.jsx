@@ -1,39 +1,65 @@
 import './App.css';
 import React from 'react'
 import RegisterUser from './RegisterUser'
+ import FindUser from  './FindUser'
+
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentUser : {},
-            searchString :{},
-            registerUser : true,
-            searchUser : false,
+            post: {},
+            searchResults: {},
+            registerUser: true,
+            registerUserStatus: 0,
+            registerUserName: '',
+            registerUserID: 0,
+            showSearch: false,
+            searchResultsStatus: 0,
+            results: {}
         }
     }
 
-    addUser = (body) => {
+    addUser = (rbody) => {
         this.handleRegisterToggle()
 
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
+            body: JSON.stringify(rbody)
         };
-        fetch('http://localhost:3001/api/v1/users/user', requestOptions)
-            .then(response => response.json())
-            .then(response => alert(response.message))
+        fetch('http://localhost:3002/api/v1/users/user', requestOptions)
+            .then(response => {
+                this.setState({ registerUserStatus: response.status })
+                this.setState({ post: response })
+
+            })
     }
 
     handleRegisterToggle = () => {
         let link = document.getElementById("Register")
-        if( this.state.registerUser){
+        this.setState({ registerUserStatus: 0 })
+        this.setState({ showSearch: false })
+        if (this.state.registerUser) {
             this.setState({ registerUser: !this.state.registerUser })
             link.classList.remove("active")
         } else {
             this.setState({ registerUser: !this.state.registerUser })
             link.classList.add("active")
         }
+    }
+
+    handleUserSearch = (e) => {
+        e.preventDefault();
+
+        let searchString = `http://localhost:3002/api/v1/users/user/${document.getElementById("search").value}`
+        fetch(searchString)
+            .then(response => {
+                this.setState({ searchResultsStatus: response.status })
+                this.setState({ post: response })
+                this.setState({ registerUser: false })
+                this.setState({ showSearch: true })
+                this.setState({ results: response })
+            })
     }
 
 
@@ -54,7 +80,7 @@ class App extends React.Component {
                                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li> */}
                             <li class="nav-item">
-                                <a class="nav-link active"  id="Register" onClick={this.handleRegisterToggle}href="#">Register</a>
+                                <a class="nav-link active" id="Register" onClick={this.handleRegisterToggle} href="#">Register</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -69,8 +95,8 @@ class App extends React.Component {
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search Users (by ID)" aria-label="Search"></input>
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search!</button>
+                            <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search Users (by ID)" aria-label="Search"></input>
+                            <button class="btn btn-secondary my-2 my-sm-0" onClick={this.handleUserSearch} type="submit">Search!</button>
                         </form>
                     </div>
                 </nav>
@@ -78,18 +104,40 @@ class App extends React.Component {
                 <main role="main" class="container">
                     <div class="main-App">
                         {/* <h2>Heading </h2> */}
-                        {this.state.registerUser ?
-                            <RegisterUser 
-                                addUser={this.addUser}/> :
+
+
+                        {this.state.searchResultsStatus === 400 ?
+                            <h2>User Not Found</h2> :
                             <div></div>}
 
-                    </div>
 
+                        {this.state.registerUserStatus === 500 ?
+                            <h2>An error has occurred while adding the user...</h2> :
+                            <div></div>}
+
+                        {/* {this.state.registerUserStatus === 200 ?
+                            <h2>{`${this.state.registerUserName} was added with a userID of ${this.state.registerUserID}`}</h2> :
+                            <div></div>} */}
+
+                        {this.state.registerUserStatus === 200 ?
+                            <h2>User was added successfully!</h2> :
+                            <div></div>}
+
+
+{this.state.registerUser ?
+                            <RegisterUser
+                                addUser={this.addUser} /> :
+                            <div></div>}
+
+{this.state.showSearch ?
+                            <FindUser
+                                results={this.props.results} /> :
+                            <div></div>}
+                    </div>
                 </main>
             </div>
         );
     }
-
 }
 export default App;
 
