@@ -21,9 +21,13 @@ router.get('/all/', function (req, res, next) {
 router.get('/user/:id', function (req, res, next) {
   queries.getUser(req.params.id)
     .then(function (users) {
-      if (users.length == 1)
+      if (users.length == 1) {
+        res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.setHeader('Access-Control-Allow-Methods', "GET");
+        res.setHeader("Access-Control-Allow-Headers", "GET");
+        res.setHeader("Access-Control-Allow-Credentials", "true");
         res.status(200).json(users);
-      else
+      } else
         res.status(400).send("User Not Found")
     })
     .catch(function (error) {
@@ -46,11 +50,11 @@ router.get('/userSession/:sessionId', function (req, res, next) {
 });
 
 router.post('/user', function (req, res, next) {
-    //Add cases for non-existent columns here
-    //Add cases for empty post
+  //Add cases for non-existent columns here
+  //Add cases for empty post
   queries.addUser(req.body)
-    .then(function (userid) {
-      return queries.getUser(userid)
+    .then(function (user) {
+      return queries.getUser(user)
     })
     .then(function (user) {
       res.status(200).json(user);
@@ -79,19 +83,19 @@ router.put('/user/:id', function (req, res, next) {
     });
 });
 
-router.delete('/user/:id', function(req, res, next){
+router.delete('/user/:id', function (req, res, next) {
   queries.getUser(req.params.id)
-  .then(function(user){
-    queries.deleteUser(req.params.id)
-    .then(function() {
-      res.status(200).json(user);
+    .then(function (user) {
+      queries.deleteUser(req.params.id)
+        .then(function () {
+          res.status(200).json(user);
+        })
+        .catch(function (error) {
+          next(error)
+        })
+    }).catch(function (error) {
+      next(error);
     })
-    .catch(function(error){
-      next(error)
-    })
-  }).catch(function(error){
-    next(error);
-  })
 })
 
 
