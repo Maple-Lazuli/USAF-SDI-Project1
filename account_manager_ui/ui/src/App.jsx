@@ -5,24 +5,36 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentUser = {},
-            searchString ={},
-            registerUser = true,
-            searchUser = false,
+            currentUser : {},
+            searchString :{},
+            registerUser : true,
+            searchUser : false,
         }
     }
 
     addUser = (body) => {
+        this.handleRegisterToggle()
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
         };
-        fetch('http://localhost:3001/addUser', requestOptions)
+        fetch('http://localhost:3001/api/v1/users/user', requestOptions)
             .then(response => response.json())
             .then(response => alert(response.message))
     }
 
+    handleRegisterToggle = () => {
+        let link = document.getElementById("Register")
+        if( this.state.registerUser){
+            this.setState({ registerUser: !this.state.registerUser })
+            link.classList.remove("active")
+        } else {
+            this.setState({ registerUser: !this.state.registerUser })
+            link.classList.add("active")
+        }
+    }
 
 
     render() {
@@ -42,7 +54,7 @@ class App extends React.Component {
                                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li> */}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Register</a>
+                                <a class="nav-link active"  id="Register" onClick={this.handleRegisterToggle}href="#">Register</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -53,23 +65,22 @@ class App extends React.Component {
                                     <a class="dropdown-item" href="#">View All Relationships</a>
                                     <a class="dropdown-item" href="#">Delete User</a>
                                     <a class="dropdown-item" href="#">Delete Relation</a>
-
-
                                 </div>
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search Users" aria-label="Search"></input>
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search Users (by ID)" aria-label="Search"></input>
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search!</button>
                         </form>
                     </div>
                 </nav>
 
                 <main role="main" class="container">
-                    <div class="starter-template">
+                    <div class="main-App">
                         {/* <h2>Heading </h2> */}
                         {this.state.registerUser ?
-                            <RegisterUser /> :
+                            <RegisterUser 
+                                addUser={this.addUser}/> :
                             <div></div>}
 
                     </div>
