@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react'
 import RegisterUser from './RegisterUser'
- import FindUser from  './FindUser'
+import FindUser from './FindUser'
 
 class App extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class App extends React.Component {
             registerUserID: 0,
             showSearch: false,
             searchResultsStatus: 0,
-            results: {}
+            results: []
         }
     }
 
@@ -49,20 +49,25 @@ class App extends React.Component {
     }
 
 
-    async  handleUserSearch(e) {
-        e.preventDefault();
-
+    async handleUserSearch(e) {
+        e.preventDefault()
+        let link = document.getElementById("Register")
+        link.classList.remove("active")
         let searchString = `http://localhost:3002/api/v1/users/user/${document.getElementById("search").value}`
-     const response =  await fetch(searchString)
+        const response = await fetch(searchString)
             .then(response => {
                 this.setState({ searchResultsStatus: response.status })
                 this.setState({ registerUser: false })
-                this.setState({ showSearch: true })
+                return response
+            }).catch(response => {
+                this.setState({ searchResultsStatus: response.status })
+                this.setState({ registerUser: false })
                 return response
             })
-            const json = await response.json()
-            this.setState({ results: json})
-            
+        const json =  await response.json()
+        this.setState({ registerUser: false })
+        this.setState({ results: json })
+        this.setState({ showSearch: true })
     }
 
 
@@ -108,34 +113,43 @@ class App extends React.Component {
                     <div class="main-App">
                         {/* <h2>Heading </h2> */}
 
-
-                        {this.state.searchResultsStatus === 400 ?
-                            <h2>User Not Found</h2> :
-                            <div></div>}
-
-
                         {this.state.registerUserStatus === 500 ?
-                            <h2>An error has occurred while adding the user...</h2> :
+                            <div class="alert alert-danger" role="alert">
+                                An error occurred while adding the user...
+                          </div> :
                             <div></div>}
-
-                        {/* {this.state.registerUserStatus === 200 ?
-                            <h2>{`${this.state.registerUserName} was added with a userID of ${this.state.registerUserID}`}</h2> :
-                            <div></div>} */}
 
                         {this.state.registerUserStatus === 200 ?
-                            <h2>User was added successfully!</h2> :
+                            <div class="alert alert-success" role="alert">
+                                The user was added successfully!
+                          </div> :
                             <div></div>}
 
 
-{this.state.registerUser ?
+                        {this.state.searchResultsStatus === 400 ?
+                            <div class="alert alert-warning" role="alert">
+                                The user was not found...
+                                                     </div> :
+                            <div></div>}
+
+
+
+                        {this.state.registerUser ?
                             <RegisterUser
-                                addUser={this.addUser} /> :
+                                addUser={this.addUser}
+                            /> :
                             <div></div>}
 
-{this.state.showSearch ?
+                        {this.state.showSearch ?
                             <FindUser
-                                results={this.props.results} /> :
+                                results={this.state.results} /> :
                             <div></div>}
+
+                        {/* Modify User*/}
+                        {/* Add supervisor*/}
+
+
+
                     </div>
                 </main>
             </div>
