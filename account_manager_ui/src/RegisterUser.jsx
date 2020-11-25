@@ -7,7 +7,7 @@ class RegisterUser extends React.Component {
             firstName: '',
             lastName: '',
             paygrade: '',
-            sessionid:12,
+            sessionid: 12,
             rank: '',
             rankInt: '',
             AFSC: '',
@@ -131,7 +131,7 @@ class RegisterUser extends React.Component {
             AFSC: this.state.AFSC,
             gender: this.state.gender,
             unit: this.state.unit,
-            DOR: this.state.DOR    
+            DOR: this.state.DOR
         }
         this.props.addUser(body);
     }
@@ -163,7 +163,7 @@ class RegisterUser extends React.Component {
                     <div class="form-group">
                         <label for="Unit">Unit</label>
                         <input type="text" class="form-control" id="unit" aria-describedby="Unit" placeholder="Unit" onChange={this.handleChangeUnit}></input>
-                        
+
                     </div>
                     {/* <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>

@@ -11,6 +11,7 @@ class App extends React.Component {
             searchResults: {},
             registerUser: true,
             registerUserStatus: 0,
+            registerUpdateStatus: 0,
             registerUserName: '',
             registerUserID: 0,
             showSearch: false,
@@ -35,9 +36,28 @@ class App extends React.Component {
             })
     }
 
+
+
+    updateUser = (rbody) => {
+        this.handleUpdateToggle()
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(rbody)
+        };
+        fetch('http://localhost:3002/api/v1/users/user', requestOptions)
+            .then(response => {
+                this.setState({ registerUpdateStatus: response.status })
+                this.setState({ post: response })
+
+            })
+    }
+
     handleRegisterToggle = () => {
         let link = document.getElementById("Register")
         this.setState({ registerUserStatus: 0 })
+        this.setState({ registerUpdateStatus: 0 })
+
         this.setState({ showSearch: false })
         if (this.state.registerUser) {
             this.setState({ registerUser: !this.state.registerUser })
@@ -49,8 +69,16 @@ class App extends React.Component {
     }
 
 
+    handleUpdateToggle = () => {
+        let link = document.getElementById("Register")
+        this.setState({ registerUserStatus: 0 })
+        this.setState({ showSearch: false })
+    }
+
+
     async handleUserSearch(e) {
         e.preventDefault()
+        this.setState({ registerUpdateStatus: 0 })
         let link = document.getElementById("Register")
         link.classList.remove("active")
         let searchString = `http://localhost:3002/api/v1/users/user/${document.getElementById("search").value}`
@@ -64,7 +92,7 @@ class App extends React.Component {
                 this.setState({ registerUser: false })
                 return response
             })
-        const json =  await response.json()
+        const json = await response.json()
         this.setState({ registerUser: false })
         this.setState({ results: json })
         this.setState({ showSearch: true })
@@ -115,7 +143,7 @@ class App extends React.Component {
 
                         {this.state.registerUserStatus === 500 ?
                             <div class="alert alert-danger" role="alert">
-                                An error occurred while adding the user...
+                                A server error occurred while adding the user...
                           </div> :
                             <div></div>}
 
@@ -125,7 +153,23 @@ class App extends React.Component {
                           </div> :
                             <div></div>}
 
+                        {this.state.registerUpdateStatus === 200 ?
+                            <div class="alert alert-success" role="alert">
+                                The user was updated successfully!
+                          </div> :
+                            <div></div>}
 
+                        {this.state.registerUpdateStatus === 500 ?
+                            <div class="alert alert-danger" role="alert">
+                                A server error occurred while updating the user...
+                          </div> :
+                            <div></div>}
+
+                        {this.state.registerUpdateStatus === 404 ?
+                            <div class="alert alert-danger" role="alert">
+                                An error occurred while updating the user...
+                          </div> :
+                            <div></div>}
                         {this.state.searchResultsStatus === 400 ?
                             <div class="alert alert-warning" role="alert">
                                 The user was not found...
@@ -142,7 +186,8 @@ class App extends React.Component {
 
                         {this.state.showSearch ?
                             <FindUser
-                                results={this.state.results} /> :
+                                results={this.state.results}
+                                updateUser={this.updateUser} /> :
                             <div></div>}
 
                         {/* Modify User*/}

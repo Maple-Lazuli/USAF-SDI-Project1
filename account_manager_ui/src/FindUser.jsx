@@ -1,10 +1,12 @@
 import React from 'react'
-
+const { render } = require("react-dom");
 class FindUser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             modify: true,
+            showUpdate: false,
+            userid: this.props.results[0].userid,
             firstName: this.props.results[0].firstName,
             lastName: this.props.results[0].lastName,
             paygrade: this.props.results[0].paygrade,
@@ -120,10 +122,12 @@ class FindUser extends React.Component {
         this.setState({ gender: e.target.value })
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault();
         let body = {
-            firstName: this.state.firstName || undefined,
+            userid: this.state.userid,
+            firstName: this.state.firstName,
             lastName: this.state.lastName,
             paygrade: this.state.paygrade,
             rank: this.state.rank,
@@ -134,14 +138,20 @@ class FindUser extends React.Component {
             unit: this.state.unit,
             DOR: this.state.DOR
         }
-        this.props.addUser(body);
+        this.props.updateUser(body);
+    }
+
+
+    handleUpdateMode = (e) => {
+        this.setState({ modify: !this.state.modify})
+        this.setState({ showUpdate: !this.state.showUpdate})
     }
 
     render() {
         return (
             <div>
                 <h2> View User</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <div class="form-group">
                         <label for="FirstName">First Name</label>
                         <input type="text" class="form-control" id="fname" aria-describedby="First Name" placeholder={this.state.firstName} onChange={this.handleChangeFname} disabled={this.state.modify}></input>
@@ -202,9 +212,9 @@ class FindUser extends React.Component {
                         <label for="Unit">Date Of Rank</label>
                         <input type="text" class="form-control" id="DOR" aria-describedby="DOR" placeholder={this.state.DOR} onChange={this.handleChangeDOR} disabled={this.state.modify}></input>
                     </div>
-                    <button type="button" class="btn btn-warning">Modify</button>
-                    Add update btn here
-                    <button type="button"  class="btn btn-danger delbtn">Delete</button>
+                    <button type="button" onClick={this.handleUpdateMode} class="btn btn-warning" hidden={this.state.showUpdate}>Modify</button>
+                    <button type="button" onClick={this.handleSubmit} class="btn btn-primary" hidden={!this.state.showUpdate}>Update</button>
+                    <button type="button"  class="btn btn-danger padme">Delete</button>
                 </form>
             </div>
         );
