@@ -48,18 +48,21 @@ class App extends React.Component {
         }
     }
 
-    handleUserSearch = (e) => {
+
+    async  handleUserSearch(e) {
         e.preventDefault();
 
         let searchString = `http://localhost:3002/api/v1/users/user/${document.getElementById("search").value}`
-        fetch(searchString)
+     const response =  await fetch(searchString)
             .then(response => {
                 this.setState({ searchResultsStatus: response.status })
-                this.setState({ post: response })
                 this.setState({ registerUser: false })
                 this.setState({ showSearch: true })
-                this.setState({ results: response })
+                return response
             })
+            const json = await response.json()
+            this.setState({ results: json})
+            
     }
 
 
@@ -96,7 +99,7 @@ class App extends React.Component {
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search Users (by ID)" aria-label="Search"></input>
-                            <button class="btn btn-secondary my-2 my-sm-0" onClick={this.handleUserSearch} type="submit">Search!</button>
+                            <button class="btn btn-secondary my-2 my-sm-0" onClick={this.handleUserSearch.bind(this)} type="submit">Search!</button>
                         </form>
                     </div>
                 </nav>

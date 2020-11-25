@@ -1,0 +1,40 @@
+version: "2.1"
+
+services:
+  db:
+    image: postgres
+    healthcheck:
+      test: exit 0
+    environment:
+      - POSTGRES_DB=accountmanager
+      - POSTGRES_USER=accountmanager
+      - POSTGRES_PASSWORD=lovelyAda
+    volumes:
+      - ./account_manager/db/src/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./account_manager/
+    image: fb4d11aecb80:latest
+    healthcheck:
+      test: exit 0
+    command: npm start
+    environment:
+      - DATABASE_URL=postgres://accountmanager:lovelyAda@db/accountmanager:5432
+      - NODE_ENV=development
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+    ports:
+      - 3001:3002
+
+  frontend:
+    build: ./account_manager_ui/ui/
+    image: 6e451d1fc460:latest
+    command: npm start
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - 3000:3000

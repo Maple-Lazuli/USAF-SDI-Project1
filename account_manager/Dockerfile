@@ -18,5 +18,3 @@ RUN npm install
 
 # Add entire student fork (overwrites previously added package.json)
 COPY . /app
-
-CMD ["npm", "start"]
