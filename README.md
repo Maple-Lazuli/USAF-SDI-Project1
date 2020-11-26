@@ -1,5 +1,14 @@
 # USAF-SDI-Project1
 
+## Design
+
+See the image in the root directory for details on the concept of the application.
+
+## Start Up
+
+From the account_manager directory, use npm start to start the backend. Similarly, use npm start from the account_manager_ui directory to start the front end.
+
+
 ## Account Manager Mock
 
 Under *account_manager_mock* is the express app that will take http requests and return user data. The mock listens on port 6000
@@ -22,10 +31,3 @@ Get user's troops (Note: Return type is an array. A supervisor can have more tha
 Get a user's supervisor
 + http://localhost:6001/supervisor/user16
 
-
-### About the generated data
-The generated data fake data on 10000 service members. The script used to create the data can be found under the *generateData* directory
-
-## TO DO
-
-modify the data to generate integers as userIDs
